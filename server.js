@@ -50,26 +50,31 @@ app.get('/pub', (req, res) => {
 	res.render('index.ejs', {
 		drinks: drinks,
 		food: food,
+		tabTitle: 'Master Branch'
 	})
 })
 
 // get drinks show individual
 app.get('/drinks/:id', (req, res) => {
-	res.render('showDrinks.ejs', {
-		drink: drinks[req.params.id],
-	})
+	res.render("showDrinks.ejs", {
+    drink: drinks[req.params.id],
+    tabTitle: "fooBar()",
+  });
 })
 
 // get food show individual
 app.get('/food/:id', (req, res) => {
-	res.render('showFood.ejs', {
-		food: food[req.params.id],
-	})
+	res.render("showFood.ejs", {
+    food: food[req.params.id],
+    tabTitle: "fooD()",
+  });
 })
 
 // get new
 app.get('/new', (req, res) => {
-	res.render('new.ejs')
+	res.render("new.ejs", {
+    tabTitle: "add -A",
+  });
 })
 
 // =======================
